@@ -1,0 +1,218 @@
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.card {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+}
+
+/* Voor alle sociale containers */
+.socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+    border-radius: 20px;
+}
+
+/* Instagram */
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+}
+
+/* Twitter */
+.containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: .3s;
+}
+
+/* LinkedIn */
+.containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: .3s;
+}
+
+/* Whatsapp */
+.containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.map {
+    height: 60vh;
+    border-radius: 20px;
+    border: 2px solid #008C45;
+}
+
+.info,
+.form {
+    background-color: white;
+    color: black;
+    border: 2px solid #008C45;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 60vh;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    background-color: lightgray;
+    color: black;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+}
+
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+    color: black;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: #d63b1d;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.input {
+    font-size: medium;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #d63b1d;
+}
+
+.submit:hover {
+    background-color: #aa3333;
+}
+
+.message{
+    height: 100%;
+}
+
+#info,
+#map,
+#form {
+    width: 30%;
+}
+
+/* Mediaquery voor schermen groter dan 480px maar niet fullscreen */
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Maak kolommen die zich aanpassen aan de beschikbare ruimte */
+        grid-gap: 20px; /* Ruimte tussen de kolommen */
+    }
+
+    #info,
+    #map {
+        width: 100%; /* Volledige breedte binnen de grid */
+    }
+
+    #form {
+        grid-column: span 2; /* Span twee kolommen */
+        width: 100%;
+    }
+
+    .info,
+    .form {
+        height: auto;
+    }
+
+    .map {
+        height: 315px;
+    }
+}
+
+/* Mediaquery voor smartphones met een maximale breedte van 480px */
+@media only screen and (max-width: 480px) {
+    /* Main content */
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #info,
+    #map,
+    #form {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .info,
+    .form {
+        height: auto;
+    }
+
+    .map {
+        height: 30vh;
+    }
+}
